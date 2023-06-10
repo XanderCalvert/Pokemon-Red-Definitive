@@ -358,6 +358,31 @@ _OaksLabText27::
 	cont "<PLAYER>! Hahaha!"
 	done
 
+_OaksLabTextCalvert::
+	text "Hey! Thanks"
+	line "for playing"
+	cont "my version of"
+	cont "#MON Red and"
+	cont "Blue Definitive."
+
+	para "I am Matt Calvert."
+	line "I made the"
+	cont "changes you'll"
+	cont "encounter."
+
+	para "I hope you enjoy"
+	line "your time in"
+	cont "this adventure."
+
+	para "Feel free to"
+	line "help the project"
+	cont "on GitHub."
+
+	para "Good Luck,"
+	line "go and catch"
+	cont "'em all!"
+	done
+
 _OaksLabText_1d405::
 	text "I study #MON as"
 	line "PROF.OAK's AIDE."

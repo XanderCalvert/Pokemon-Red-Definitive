@@ -19,6 +19,6 @@ OaksLab_Object:                     ; Object data for Professor Oak's lab map
 	object_event  1,  9, SPRITE_GIRL, WALK, UP_DOWN, 9                   ; Define a girl at (x=1, y=9), walking up and down
 	object_event  2, 10, SPRITE_SCIENTIST, STAY, NONE, 10                ; Define a scientist at (x=2, y=10), staying in place
 	object_event  8, 10, SPRITE_SCIENTIST, STAY, NONE, 11                ; Define another scientist at (x=8, y=10)
-	object_event  9,  8,  SPRITE_GAMEBOY_KID, STAY, DOWN, 12              ; Define Gameboy Kid at (x=8, y=10)
+	object_event  9,  8,  SPRITE_GAMEBOY_KID, STAY, DOWN, 28              ; Define Gameboy Kid at (x=9, y=8)
 
 	def_warps_to OAKS_LAB            ; Define the destination of warp points leading to Oak's Lab

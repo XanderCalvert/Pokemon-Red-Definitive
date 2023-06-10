@@ -747,6 +747,7 @@ OaksLab_TextPointers:
 	dw OaksLabText25
 	dw OaksLabText26
 	dw OaksLabText27
+	dw OaksLabText28
 
 OaksLab_TextPointers2:
 	dw OaksLabText1
@@ -1231,3 +1232,13 @@ OaksLabText10:
 OaksLabText_1d405:
 	text_far _OaksLabText_1d405
 	text_end
+
+OaksLabTextCalvert:
+	text_far _OaksLabTextCalvert
+	text_end
+
+OaksLabText28:
+	text_asm
+	ld hl, OaksLabTextCalvert
+	call PrintText
+	jp TextScriptEnd
