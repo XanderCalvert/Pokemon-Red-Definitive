@@ -164,6 +164,7 @@ AttackAnimationPointers:
 	dw SuperFangAnim
 	dw SlashAnim
 	dw SubstituteAnim
+    dw FrenzyPlantAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -640,6 +641,12 @@ RazorLeafAnim:
 	db -1 ; end
 
 SolarBeamAnim:
+	battle_anim SOLARBEAM, SUBANIM_0_BEAM, 0, 6
+	battle_anim NO_MOVE, SUBANIM_0_STAR_TWICE, 0, 6
+	db -1 ; end
+
+FrenzyPlantAnim:
+    battle_anim RAZOR_LEAF, SE_LEAVES_FALLING   
 	battle_anim SOLARBEAM, SUBANIM_0_BEAM, 0, 6
 	battle_anim NO_MOVE, SUBANIM_0_STAR_TWICE, 0, 6
 	db -1 ; end
