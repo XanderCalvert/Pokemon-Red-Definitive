@@ -1,5 +1,17 @@
 # Pokémon Red and Blue [![Build Status][ci-badge]][ci]
 
+This codebase is a fork of the disassembly of Pokémon Red and Blue.
+
+The goal of this project is to make a definitive version of Pokémon version for the Gameboy how I imagine how it should have been done.
+
+The scope of this project is ever growing at the moment with the main focus being on fixing bugs and adding Quality of Life improvements.
+
+Feel free to submit pull requests with justifications.
+
+Quite a weird passion project to be taking on in my free time but it makes a welcome change from writing WordPress Themes and Plugins.
+
+# Please support the original project this was forked from.
+
 This is a disassembly of Pokémon Red and Blue.
 
 It builds the following ROMs:
