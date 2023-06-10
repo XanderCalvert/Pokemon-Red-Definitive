@@ -160,3 +160,12 @@ If you have different projects that require different versions of `rgbds`, it mi
 ```bash
 make RGBDS=rgbds-0.6.1/
 ```
+
+
+
+```
+Calvert Notes
+```
+
+cd /mnt/d/codingPokemon/Pokemon-Red-Definitive
+make
