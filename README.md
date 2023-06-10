@@ -10,7 +10,7 @@ Feel free to submit pull requests with justifications.
 
 Quite a weird passion project to be taking on in my free time but it makes a welcome change from writing WordPress Themes and Plugins.
 
-# Please support the original project this was forked from.
+## Please support the original project this was forked from.
 
 This is a disassembly of Pokémon Red and Blue.
 
