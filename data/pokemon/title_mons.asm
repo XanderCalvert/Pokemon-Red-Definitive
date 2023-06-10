@@ -17,6 +17,8 @@ IF DEF(_RED)
 	db ONIX
 	db PONYTA
 	db MAGIKARP
+	db MEW
+	db MEWTWO
 ENDC
 IF DEF(_BLUE)
 	db STARTER2
@@ -35,4 +37,6 @@ IF DEF(_BLUE)
 	db PORYGON
 	db GENGAR
 	db RAICHU
+	db MEW
+	db MEWTWO
 ENDC

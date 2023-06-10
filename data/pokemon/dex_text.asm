@@ -1248,15 +1248,15 @@ _StarmieDexEntry::
 	next "core as a gem"
 	dex
 
-_BulbasaurDexEntry::
-	text "A strange seed was"
-	next "planted on its"
-	next "back at birth."
+BulbasaurDexEntry::
+    text "There's a plant seed"
+    next "on its back right"
+    next "from its birth."
 
-	page "The plant sprouts"
-	next "and grows with"
-	next "this #MON"
-	dex
+    page "The seed slowly grows"
+    next "larger with each"
+    next "passing day."
+    dex
 
 _VenusaurDexEntry::
 	text "The plant blooms"
