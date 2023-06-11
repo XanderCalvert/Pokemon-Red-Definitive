@@ -4624,14 +4624,14 @@ CriticalHitTest:
 	ld c, [hl]                   ; read move id
 	ld a, [de]
 	bit GETTING_PUMPED, a        ; test for focus energy
-	jr z, .focusEnergyUsed       ; Fixed the bug where it would reduce Crit Chance
+	jr z, .noFocusEnergyUsed     ; Fixed the bug where it would reduce Crit Chance
 	sla b                        ; (effective (base speed/2)*2)
-	jr nc, .noFocusEnergyUsed
+	jr nc, .focusEnergyUsed
 	ld b, $ff                    ; cap at 255/256
-	jr .noFocusEnergyUsed
-.focusEnergyUsed
-	srl b
+	jr .focusEnergyUsed
 .noFocusEnergyUsed
+	srl b
+.focusEnergyUsed
 	ld hl, HighCriticalMoves     ; table of high critical hit moves
 .Loop
 	ld a, [hli]                  ; read move from move table
@@ -4650,12 +4650,16 @@ CriticalHitTest:
 	jr nc, .SkipHighCritical
 	ld b, $ff
 .SkipHighCritical
+ 	ld a, b
+ 	inc a ; optimization of "cp $ff"
+ 	jr z, .guaranteedCriticalHit
 	call BattleRandom            ; generates a random value, in "a"
 	rlc a
 	rlc a
 	rlc a
 	cp b                         ; check a against calculated crit rate
 	ret nc                       ; no critical hit if no borrow
+    .guaranteedCriticalHit
 	ld a, $1
 	ld [wCriticalHitOrOHKO], a   ; set critical hit flag
 	ret
@@ -5439,8 +5443,12 @@ MoveHitTest:
 	ld a, [wEnemyMoveAccuracy]
 	ld b, a
 .doAccuracyCheck
-; if the random number generated is greater than or equal to the scaled accuracy, the move misses
-; note that this means that even the highest accuracy is still just a 255/256 chance, not 100%
+    ; if the random number generated is greater than or equal to the scaled accuracy, the move misses
+    ; note that this means that even the highest accuracy is still just a 255/256 chance, not 100%
+ 	; The following snippet is taken from Pokemon Crystal, it fixes the above bug.
+ 	ld a, b
+ 	cp $FF ; Is the value $FF?
+ 	ret z ; If so, we need not calculate, just so we can fix this bug.
 	call BattleRandom
 	cp b
 	jr nc, .moveMissed
