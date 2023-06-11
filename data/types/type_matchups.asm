@@ -90,7 +90,7 @@ TypeEffects:
     db DARK,         DARK,         NOT_VERY_EFFECTIVE
     db DARK,         GHOST,        SUPER_EFFECTIVE
     db DARK,         PSYCHIC_TYPE, SUPER_EFFECTIVE
-    db FAIRY,        DARK,         SUPER_EFFECTIVE
+    ; db FAIRY,        DARK,         SUPER_EFFECTIVE
     ; New interactions with the Steel type:
     db FIRE,         STEEL,        SUPER_EFFECTIVE
     db WATER,        STEEL,        NOT_VERY_EFFECTIVE
@@ -109,22 +109,22 @@ TypeEffects:
     db DARK,         STEEL,        NOT_VERY_EFFECTIVE
     db STEEL,        ROCK,         SUPER_EFFECTIVE
     db STEEL,        ICE,          SUPER_EFFECTIVE
-    db STEEL,        FAIRY,        SUPER_EFFECTIVE
+    ; db STEEL,        FAIRY,        SUPER_EFFECTIVE
     ; New interactions with the Fairy type:
-    db FIRE,         FAIRY,        NOT_VERY_EFFECTIVE
-    db FIGHTING,     FAIRY,        NOT_VERY_EFFECTIVE
-    db POISON,       FAIRY,        SUPER_EFFECTIVE
-    db GROUND,       FAIRY,        NOT_VERY_EFFECTIVE
-    db FLYING,       FAIRY,        NOT_VERY_EFFECTIVE
-    db BUG,          FAIRY,        NOT_VERY_EFFECTIVE
-    db ROCK,         FAIRY,        NOT_VERY_EFFECTIVE
-    db GHOST,        FAIRY,        NOT_VERY_EFFECTIVE
-    db DRAGON,       FAIRY,        NO_EFFECT
-    db DARK,         FAIRY,        NOT_VERY_EFFECTIVE
-    db STEEL,        FAIRY,        SUPER_EFFECTIVE
-    db FAIRY,        FIGHTING,     SUPER_EFFECTIVE
-    db FAIRY,        DRAGON,       SUPER_EFFECTIVE
-    db FAIRY,        DARK,         SUPER_EFFECTIVE
+    ; db FIRE,         FAIRY,        NOT_VERY_EFFECTIVE
+    ; db FIGHTING,     FAIRY,        NOT_VERY_EFFECTIVE
+    ; db POISON,       FAIRY,        SUPER_EFFECTIVE
+    ; db GROUND,       FAIRY,        NOT_VERY_EFFECTIVE
+    ; db FLYING,       FAIRY,        NOT_VERY_EFFECTIVE
+    ; db BUG,          FAIRY,        NOT_VERY_EFFECTIVE
+    ; db ROCK,         FAIRY,        NOT_VERY_EFFECTIVE
+    ; db GHOST,        FAIRY,        NOT_VERY_EFFECTIVE
+    ; db DRAGON,       FAIRY,        NO_EFFECT
+    ; db DARK,         FAIRY,        NOT_VERY_EFFECTIVE
+    ; db STEEL,        FAIRY,        SUPER_EFFECTIVE
+    ; db FAIRY,        FIGHTING,     SUPER_EFFECTIVE
+    ; db FAIRY,        DRAGON,       SUPER_EFFECTIVE
+    ; db FAIRY,        DARK,         SUPER_EFFECTIVE
     ; Adjusted interactions with the existing types:
     db GHOST,        PSYCHIC_TYPE, SUPER_EFFECTIVE
     db BUG,          POISON,       NOT_VERY_EFFECTIVE

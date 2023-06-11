@@ -4,6 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, NORMAL ; type
+	; db FAIRY, FAIRY ; type
 	db 150 ; catch rate
 	db 68 ; base exp
 
