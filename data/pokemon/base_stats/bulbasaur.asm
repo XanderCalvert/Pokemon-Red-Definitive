@@ -11,7 +11,7 @@
 	dw BulbasaurPicFront, BulbasaurPicBack
 
 	; db TACKLE, GROWL, NO_MOVE, NO_MOVE ; level 1 learnset
-	db TACKLE, GROWL, TOXIC, FRENZY_PLANT ; level 1 learnset
+	db TACKLE, GROWL, PSYWAVE, FRENZY_PLANT ; level 1 learnset
 	; db FRENZY_PLANT, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset ; TODO DEBUG
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
