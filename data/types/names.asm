@@ -12,6 +12,7 @@ TypeNames:
 	dw .Ghost
 	dw .Dark
 	dw .Steel
+	dw .Typeless
 
 REPT UNUSED_TYPES_END - UNUSED_TYPES
 	dw .Normal
@@ -47,3 +48,4 @@ ENDR
 .Dark:     db "DARK@"
 .Steel:    db "STEEL@"
 .Fairy:    db "FAIRY@"
+.Typeless: db "TYPELESS@"

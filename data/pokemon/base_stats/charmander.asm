@@ -4,6 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db FIRE, FIRE ; type
+	; db GHOST, GHOST ; type ; TODO DEBUG
 	db 45 ; catch rate
 	db 65 ; base exp
 
