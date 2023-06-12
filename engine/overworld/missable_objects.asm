@@ -136,13 +136,15 @@ ShowObject2:
 
 ; removes missable object (items, leg. pokemon, etc.) from the map
 ; [wMissableObjectIndex]: index of the missable object to be removed (global index)
-HideObject:
-	ld hl, wMissableObjectFlags
-	ld a, [wMissableObjectIndex]
-	ld c, a
-	ld b, FLAG_SET
-	call MissableObjectFlagAction   ; set "removed" flag
-	jp UpdateSprites
+HideObject:                       ; Start of the subroutine "HideObject".
+	ld hl, wMissableObjectFlags  ; Load the address of "wMissableObjectFlags" into the HL register pair.
+	ld a, [wMissableObjectIndex] ; Load the value at the address "wMissableObjectIndex" into the A register.
+	ld c, a                      ; Copy the value in A register to the C register.
+	ld b, FLAG_SET               ; Load the "FLAG_SET" constant into the B register.
+	call MissableObjectFlagAction ; Call the subroutine "MissableObjectFlagAction", 
+                                  ; this will set the "removed" flag for the object with the index we've loaded.
+	jp UpdateSprites              ; Jump to the subroutine "UpdateSprites" to update the sprite states in the game.
+                                  ; This likely involves hiding the object whose "removed" flag was just set.
 
 MissableObjectFlagAction:
 ; identical to FlagAction

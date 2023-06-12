@@ -10,6 +10,14 @@ Feel free to submit pull requests with justifications.
 
 Quite a weird passion project to be taking on in my free time but it makes a welcome change from writing WordPress Themes and Plugins.
 
+## Current Plans
+
+Currently found in the code where the flag is that shows and hide the guy blocking cerulean cave which is when you beat the Elite 4. Investigating whether this flag can be used to add the unobtainable pokemon into the game after as well.
+
+Would want to version exclusive in after the game has been beaten as wild encounters instead of just over world sprites as a sort of easter egg. MEW after 150 pokemon caught.
+
+Also can add additional trainers in with this flag as well probably. Would just depend on memory size but need to find that out.
+
 ## Please support the original project this was forked from.
 
 This is a disassembly of Pokémon Red and Blue.
