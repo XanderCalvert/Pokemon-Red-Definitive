@@ -49,14 +49,13 @@ TrainerDataPointers:
 	dw LanceData
 	assert_table_length NUM_TRAINERS
 
-; if first byte != $FF, then
-	; first byte is level (of all pokemon on this team)
-	; all the next bytes are pokemon species
-	; null-terminated
-; if first byte == $FF, then
-	; first byte is $FF (obviously)
-	; every next two bytes are a level and species
-	; null-terminated
+; Teams with sinle level for each Pokémon.
+; First byte (11) indicates the level for all Pokémon. Following bytes are species identifiers.
+; 0 byte is a terminator.
+
+; Teams with variable levels for each Pokémon.
+; Starts with a $FF byte, followed by pairs of level-species identifiers.
+; 0 byte is a terminator.
 
 YoungsterData:
 ; Route 3
