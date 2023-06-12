@@ -97,6 +97,10 @@ HallofFameRoomScript1:
     ld a, HS_CERULEAN_CAVE_GUY ; Load the value representing the guy outside of Cerulean Cave into register A
     ld [wMissableObjectIndex], a ; Store the value of register A at memory address wMissableObjectIndex (probably referring to the character to hide)
     predef HideObject ; Call a predefined subroutine that hides the specified object
+        ; if additional things want to hidden or shown after the eilte 4 in the overworld this is where it is done copying the above
+        ; ld a, HS_CERULEAN_CAVE_GUY ; Load the value 
+        ; ld [wMissableObjectIndex], a ; Store the value of register A at memory address wMissableObjectIndex
+        ; predef HideObject ; Call a predefined subroutine that hides the specified object
     ld a, $2 ; Load 2 into register A
     ld [wHallOfFameCurScript], a ; Store the value of register A at memory address wHallOfFameCurScript (probably indicating the current script to run in the Hall of Fame room)
     ret ; Return from this subroutine
