@@ -274,7 +274,7 @@ CeruleanCityHS:
 	db CERULEAN_CITY, $01, HIDE
 	db CERULEAN_CITY, $02, SHOW
 	db CERULEAN_CITY, $06, HIDE
-	db CERULEAN_CITY, $0A, SHOW
+	db CERULEAN_CITY, $0A, SHOW ; Cerulean cave guy blocking the entrance
 	db CERULEAN_CITY, $0B, SHOW
 SaffronCityHS:
 	db SAFFRON_CITY, $01, SHOW
