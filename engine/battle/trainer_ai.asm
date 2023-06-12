@@ -372,12 +372,21 @@ LtSurgeAI:
 	jp AIUseXSpeed
 
 ErikaAI:
-	cp 50 percent + 1
-	ret nc
+	; compare the result of a random number generator with 50% + 1
+	cp 50 percent + 1 
+	; if the result of the comparison is not carry (meaning the random number was less than or equal to 50%),
+	; then it returns and doesn't proceed with the rest of the code
+	ret nc 
+	; load 10 into register a, which could represent a percentage (10% in this case)
 	ld a, 10
+	; call the subroutine AICheckIfHPBelowFraction. This checks if the current Pokémon's HP is below a certain fraction (10% here)
 	call AICheckIfHPBelowFraction
-	ret nc
+	; if the result of the check is not carry (meaning the Pokémon's HP is not below the specified fraction),
+	; then it returns and doesn't proceed with the rest of the code
+	ret nc 
+	; if the Pokémon's HP is below the specified fraction, then it jumps to the AIUseSuperPotion subroutine, which will make Erika use a Super Potion
 	jp AIUseSuperPotion
+
 
 KogaAI:
 	cp 25 percent + 1
