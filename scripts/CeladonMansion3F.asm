@@ -58,6 +58,7 @@ DirectorText:
     text_promptbutton          ; Wait for button press before proceeding.
     text_asm                   ; Start of custom assembly code.
     callfar DisplayDiploma     ; Call subroutine to display the diploma for completing the Pokédex.
+    SetEvent EVENT_DIPLOMA_OBTAINED		   ; Set event that the player has obtained the diploma
     ld a, TRUE                 ; Load TRUE into register a.
     ld [wDoNotWaitForButtonPressAfterDisplayingText], a ; Do not wait for a button press after displaying the text.
     jp TextScriptEnd           ; Jump to the end of the text script.
