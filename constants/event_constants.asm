@@ -142,6 +142,7 @@
 	const EVENT_1BF ; ???
 	const_skip 32
 	const EVENT_GOT_COIN_CASE
+	const EVENT_DIPLOMA_OBTAINED
 
 ; Fuchsia City events
 	const_next $238
