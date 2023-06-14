@@ -1,32 +1,33 @@
-CableClubNPC::
-	ld hl, CableClubNPCWelcomeText
-	call PrintText
-	CheckEvent EVENT_GOT_POKEDEX
-	jp nz, .receivedPokedex
+CableClubNPC:: ; Beginning of the CableClubNPC routine
+	ld hl, CableClubNPCWelcomeText ; Load the address of the welcome text
+	call PrintText ; Call function to print text
+	CheckEvent EVENT_GOT_POKEDEX ; Check if the Pokedex event has occurred
+	jp nz, .receivedPokedex ; If the event occurred (the bit was set), jump to the .receivedPokedex label
 ; if the player hasn't received the pokedex
-	ld c, 60
-	call DelayFrames
-	ld hl, CableClubNPCMakingPreparationsText
-	call PrintText
-	jp .didNotConnect
-.receivedPokedex
-	ld a, $1
-	ld [wMenuJoypadPollCount], a
-	ld a, 90
-	ld [wLinkTimeoutCounter], a
-.establishConnectionLoop
-	ldh a, [hSerialConnectionStatus]
-	cp USING_INTERNAL_CLOCK
-	jr z, .establishedConnection
-	cp USING_EXTERNAL_CLOCK
-	jr z, .establishedConnection
-	ld a, CONNECTION_NOT_ESTABLISHED
-	ldh [hSerialConnectionStatus], a
-	ld a, ESTABLISH_CONNECTION_WITH_EXTERNAL_CLOCK
-	ldh [rSB], a
-	xor a
-	ldh [hSerialReceiveData], a
-	ld a, START_TRANSFER_EXTERNAL_CLOCK
+	ld c, 60 ; Load 60 into register c
+	call DelayFrames ; Call a function that causes a delay for a number of frames specified in register c
+	ld hl, CableClubNPCMakingPreparationsText ; Load the address of the text for when preparations are being made
+	call PrintText ; Call function to print text
+	jp .didNotConnect ; Jump to the .didNotConnect label
+.receivedPokedex ; Label for the case where the Pokedex event has occurred
+	ld a, $1 ; Load 1 into register a
+	ld [wMenuJoypadPollCount], a ; Write the value of register a to the address of the Joypad poll count
+	ld a, 90 ; Load 90 into register a
+	ld [wLinkTimeoutCounter], a ; Write the value of register a to the address of the link timeout counter
+.establishConnectionLoop ; Beginning of the loop that attempts to establish a connection
+	ldh a, [hSerialConnectionStatus] ; Load the value of the serial connection status into register a
+	cp USING_INTERNAL_CLOCK ; Compare the value of register a with the value of USING_INTERNAL_CLOCK
+	jr z, .establishedConnection ; If they are equal, jump to the .establishedConnection label
+	cp USING_EXTERNAL_CLOCK ; Compare the value of register a with the value of USING_EXTERNAL_CLOCK
+	jr z, .establishedConnection ; If they are equal, jump to the .establishedConnection label
+	ld a, CONNECTION_NOT_ESTABLISHED ; Load the value of CONNECTION_NOT_ESTABLISHED into register a
+	ldh [hSerialConnectionStatus], a ; Write the value of register a to the address of the serial connection status
+	ld a, ESTABLISH_CONNECTION_WITH_EXTERNAL_CLOCK ; Load the value of ESTABLISH_CONNECTION_WITH_EXTERNAL_CLOCK into register a
+	ldh [rSB], a ; Write the value of register a to the SB register
+	xor a ; Clear register a
+	ldh [hSerialReceiveData], a ; Write the value of register a to the address of the serial receive data
+	ld a, START_TRANSFER_EXTERNAL_CLOCK ; Load the value of START_TRANSFER_EXTERNAL_CLOCK into register a
+
 ; This vc_hook causes the Virtual Console to set [hSerialConnectionStatus] to
 ; USING_INTERNAL_CLOCK, which allows the player to proceed past the link
 ; receptionist's "Please wait." It assumes that hSerialConnectionStatus is at

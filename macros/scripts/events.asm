@@ -1,19 +1,19 @@
 ;\1 = event index
 ;\2 = return result in carry instead of zero flag
-MACRO CheckEvent
-	DEF event_byte = ((\1) / 8)
-	ld a, [wEventFlags + event_byte]
+MACRO CheckEvent ; Define a macro called "CheckEvent" to check game event status
+	DEF event_byte = ((\1) / 8) ; Calculate which byte in the event flags array holds the bit for the specified event
+	ld a, [wEventFlags + event_byte] ; Load that byte into register a
 
-	IF _NARG > 1
-		IF ((\1) % 8) == 7
-			add a
-		ELSE
-			REPT ((\1) % 8) + 1
-				rrca
-			ENDR
+	IF _NARG > 1 ; If there is more than one argument
+		IF ((\1) % 8) == 7 ; If the bit for the event is the 8th bit in the byte
+			add a ; Double the value in register a (equivalent to shifting it left by 1)
+		ELSE ; If the bit for the event is not the 8th bit in the byte
+			REPT ((\1) % 8) + 1 ; Repeat the following operation for each bit in the byte, up to and including the bit for the event
+				rrca ; Rotate the bits in register a to the right (equivalent to shifting them right by 1)
+			ENDR ; End of the repeated operation
 		ENDC
-	ELSE
-		bit (\1) % 8, a
+	ELSE ; If there is only one argument
+		bit (\1) % 8, a ; Check if the bit for the event in the byte is set (non-zero)
 	ENDC
 ENDM
 
