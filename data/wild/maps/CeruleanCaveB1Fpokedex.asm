@@ -20,6 +20,8 @@ ENDC
 	def_water_wildmonspokedex 0 ; encounter rate
 	end_water_wildmonspokedex
 
+    ; HS_CERULEAN_CAVE_GUY ; const that blocks the entrance
+
 ; CeruleanCaveB1FWildMonsPokedex:                  ; Defines the wild Pokémon encounter data for Cerulean Cave B1F
 ; 	def_grass_wildmonspokedex 25 ; encounter rate ; Starts the encounter data for grass areas, with a 25% encounter rate
 ; 	db 55, RHYDON                         ; 55 level RHYDON can be found in the grass

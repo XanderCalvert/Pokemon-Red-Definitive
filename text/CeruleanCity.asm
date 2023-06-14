@@ -191,7 +191,7 @@ _CeruleanCityText9::
 	cont "get dirty!"
 	done
 
-; Guy blokcing Cerulean Cave
+; Guy blocking Cerulean Cave ; HS_CERULEAN_CAVE_GUY
 _CeruleanCityText10::
 	text "This is CERULEAN"
 	line "CAVE! Horribly"
