@@ -1,6 +1,25 @@
 LoadWildData::
-	CheckEvent EVENT_DIPLOMA_OBTAINED
-	ld hl, WildDataPointers ; Load the base address of the WildDataPointers table
+    ; Check if the player has obtained the diploma
+    ; CheckEvent EVENT_DIPLOMA_OBTAINED
+    ; jr nz, .DiplomaObtained
+    ; Check if the player has obtained the Pokedex
+    CheckEvent EVENT_GOT_POKEDEX
+    jr nz, .PokedexObtained
+    ; If neither diploma nor Pokedex have been obtained, load from the regular pointer list
+    ld hl, WildDataPointers
+    jr .LoadWildData
+
+; .DiplomaObtained:
+;     ; If the diploma has been obtained, load from the special pointer list
+;     ld hl, DiplomaWildDataPointers
+;     jr .LoadWildData
+
+.PokedexObtained:
+    ; If the Pokedex has been obtained, load from the special Pokedex pointer list
+    ld hl, PokedexWildDataPointers
+    ; No need for a jr instruction here since the next label will be .LoadWildData
+
+.LoadWildData:
 	ld a, [wCurMap] ; Load the current map ID
 
 	; get wild data for current map
@@ -32,7 +51,11 @@ LoadWildData::
 	jp CopyData ; Copy the water encounter data to the table (and return)
 
 INCLUDE "data/wild/grass_water.asm"
+INCLUDE "data/wild/pokedex_grass_water.asm"
+; INCLUDE "data/wild/diploma_grass_water.asm"
 
+
+; CheckEvent EVENT_GOT_POKEDEX
 
 ; LoadWildData::
 ;     ; Check if the player has obtained the diploma
