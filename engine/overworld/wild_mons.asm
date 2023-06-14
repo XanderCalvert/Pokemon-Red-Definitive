@@ -1,4 +1,5 @@
 LoadWildData::
+	CheckEvent EVENT_DIPLOMA_OBTAINED
 	ld hl, WildDataPointers ; Load the base address of the WildDataPointers table
 	ld a, [wCurMap] ; Load the current map ID
 
@@ -35,8 +36,7 @@ INCLUDE "data/wild/grass_water.asm"
 
 ; LoadWildData::
 ;     ; Check if the player has obtained the diploma
-;     ld a, [wEventFlags + (EVENT_DIPLOMA_OBTAINED / 8)]
-;     bit EVENT_DIPLOMA_OBTAINED % 8, a
+;     CheckEvent EVENT_DIPLOMA_OBTAINED
 ;     jr nz, .DiplomaObtained
 ;     ; If the diploma has not been obtained, load from the regular pointer list
 ;     ld hl, WildDataPointers
@@ -45,7 +45,6 @@ INCLUDE "data/wild/grass_water.asm"
 ;     ; If the diploma has been obtained, load from the special pointer list
 ;     ld hl, DiplomaWildDataPointers
 ; .LoadWildData:
-;     ; The rest of the code is unchanged
 ;     ld a, [wCurMap]
 ;     ld c, a
 ;     ld b, 0
