@@ -14,7 +14,7 @@ Quite a weird passion project to be taking on in my free time but it makes a wel
 
 Currently found in the code where the flag is that shows and hide the guy blocking cerulean cave which is when you beat the Elite 4. Investigating whether this flag can be used to add the unobtainable pokemon into the game after as well.
 
-Would want to version exclusive in after the game has been beaten as wild encounters instead of just over world sprites as a sort of easter egg. MEW after 150 pokemon caught.
+Implimented a check for the route encounter data to be changed depending on flags. Going to be elite 4 for starters and version exclusives. Diploma for Mew.
 
 Also can add additional trainers in with this flag as well probably. Would just depend on memory size but need to find that out.
 
