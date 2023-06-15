@@ -1,4 +1,4 @@
-# Pokémon Red and Blue [![Build Status][ci-badge]][ci]
+# Pokémon Red and Blue 
 
 This codebase is a fork of the disassembly of Pokémon Red and Blue.
 
