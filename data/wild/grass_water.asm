@@ -321,3 +321,32 @@ INCLUDE "data/wild/maps/VictoryRoad2F.asm"
 INCLUDE "data/wild/maps/VictoryRoad3F.asm"
 INCLUDE "data/wild/maps/VictoryRoad1F.asm"
 INCLUDE "data/wild/maps/DiglettsCave.asm"
+
+
+; WildDataPointers:
+; 	table_width 2, WildDataPointers
+; 	dw Route1WildMons          ; ROUTE_1
+; 	dw Route2WildMons          ; ROUTE_2
+; 	dw Route3WildMons          ; ROUTE_3	
+;     assert_table_length NUM_MAPS
+; 	dw -1 ; end
+
+; INCLUDE "data/wild/maps/Route1.asm"
+; INCLUDE "data/wild/maps/Route2.asm"
+; INCLUDE "data/wild/maps/Route3.asm"
+
+; E4BeatenWildDataPointers:
+; 	table_width 2, E4BeatenWildDataPointers
+; 	dw Route1WildMonsE4          ; ROUTE_1
+;     assert_table_length NUM_MAPS
+; 	dw -1 ; end
+
+; INCLUDE "data/wild/maps/Route1e4.asm"
+
+; PokedexWildDataPointers:
+; 	table_width 2, PokedexWildDataPointers
+; 	dw Route3WildMonsPD          ; ROUTE_3	
+;     assert_table_length NUM_MAPS
+; 	dw -1 ; end
+
+; INCLUDE "data/wild/maps/Route3pd.asm"

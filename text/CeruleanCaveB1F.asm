@@ -45,8 +45,8 @@ _MewtwoBattleText::
 ; 	cont "challenge!"
 ; 	done
 
-_MewtwoBattleText::
-	para "I wasn't born a"
-	line "#MON, I was"
-	cont "created  can"
-	cont "become stronger!"
+; _MewtwoBattleText::
+; 	para "I wasn't born a"
+; 	line "#MON, I was"
+; 	cont "created  can"
+; 	cont "become stronger!"
