@@ -18,6 +18,29 @@ Implimented a check for the route encounter data to be changed depending on flag
 
 Also can add additional trainers in with this flag as well probably. Would just depend on memory size but need to find that out.
 
+## Current issues on this branch
+
+```
+/mnt/d/codingpokemon/pokemon-red-definitive$ make
+
+data/wild/grass_water.asm: no newline at end of file
+text/CeruleanCaveB1F.asm: no newline at end of file
+data/wild/grass_water.asm: no newline at end of file
+text/CeruleanCaveB1F.asm: no newline at end of file
+data/wild/grass_water.asm: no newline at end of file
+text/CeruleanCaveB1F.asm: no newline at end of file
+data/wild/grass_water.asm: no newline at end of file
+text/CeruleanCaveB1F.asm: no newline at end of file
+data/wild/grass_water.asm: no newline at end of file
+text/CeruleanCaveB1F.asm: no newline at end of file
+rgblink -p 0x00 -d -m pokered.map -n pokered.sym -l layout.link -o pokered.gbc audio_red.o home_red.o main_red.o maps_red.o ram_red.o text_red.o gfx/pics_red.o gfx/sprites_red.o gfx/tilesets_red.o
+error: home.asm(21) -> home/overworld.asm(2260) -> macros/farcall.asm::callfar(9): Requested BANK() of symbol "LoadWildData", which was not found
+error: home.asm(21) -> home/overworld.asm(2260) -> macros/farcall.asm::callfar(8): Unknown symbol "LoadWildData"
+error: main.asm(55) -> engine/overworld/wild_mons.asm(99) -> data/wild/e4_grass_water.asm(3): Unknown symbol "ViridianForestWildMonsE4"
+Linking failed with 3 errors
+make: *** [Makefile:151: pokered.gbc] Error 1
+```
+
 ## Please support the original project this was forked from.
 
 This is a disassembly of Pokémon Red and Blue.
