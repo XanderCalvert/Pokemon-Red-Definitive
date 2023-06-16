@@ -12,7 +12,7 @@ E4BeatenWildDataPointers:
 	dw NothingWildMons         ; INDIGO_PLATEAU
 	dw NothingWildMons         ; SAFFRON_CITY
 	dw NothingWildMons         ; unused
-	dw Route1WildMonsE4         ; ROUTE_1
+	dw Route1WildMons          ; ROUTE_1
 	dw Route2WildMons          ; ROUTE_2
 	dw Route3WildMons          ; ROUTE_3
 	dw Route4WildMons          ; ROUTE_4
@@ -51,7 +51,7 @@ E4BeatenWildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
-	dw ViridianForestWildMons ; ViridianForest
+	dw ViridianForestWildMonsE4 ; ViridianForest
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
@@ -248,7 +248,7 @@ E4BeatenWildDataPointers:
 	dw NothingWildMons
 	dw NothingWildMons
 	dw NothingWildMons
-	assert_table_lengthPD NUM_MAPS
+	assert_table_lengthE4 NUM_MAPS
 	dw -1 ; end
 
 ; wild pokemon data is divided into two parts.
@@ -262,4 +262,4 @@ E4BeatenWildDataPointers:
         ; followed by 20 bytes:
         ; level, species (ten times)
 
-INCLUDE "data/wild/maps/Route1e4.asm"
+INCLUDE "data/wild/maps/ViridianForeste4.asm"
