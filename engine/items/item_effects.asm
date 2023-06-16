@@ -518,7 +518,7 @@ ItemUseBall:
 	ld hl, ItemUseBallText05
 	call PrintText
 
-; Add the caught Pokémon to the Pokédex.
+; Add the caught Pokémon to the Pokédex. ; // TODO adding pokemon to the pokedex, is it possible to see what pokemon is caught and set flags
 	predef IndexToPokedex
 	ld a, [wd11e]
 	dec a
