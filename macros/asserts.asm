@@ -22,6 +22,12 @@ MACRO assert_table_lengthPD
 		"{CURRENT_TABLE_START}: expected {d:x} entries, each {d:CURRENT_TABLE_WIDTH} bytes"
 ENDM
 
+MACRO assert_table_lengthE4
+	DEF x = \1
+	ASSERT x * CURRENT_TABLE_WIDTH == @ - {CURRENT_TABLE_START}, \
+		"{CURRENT_TABLE_START}: expected {d:x} entries, each {d:CURRENT_TABLE_WIDTH} bytes"
+ENDM
+
 MACRO list_start
 	DEF list_index = 0
 	IF _NARG == 1
@@ -183,5 +189,41 @@ MACRO end_water_wildmonspokedex
 	ELSE
 		ASSERT WILDDATA_LENGTH_POKEDEX == @ - {CURRENT_WATER_WILDMONS_LABEL_POKEDEX}, \
 			"def_water_wildmonspokedex {d:CURRENT_WATER_WILDMONS_RATE_POKEDEX}: expected {d:WILDDATA_LENGTH_POKEDEX} bytes"
+	ENDC
+ENDM
+
+MACRO def_grass_wildmonse4
+;\1: encounter rate
+	DEF CURRENT_GRASS_WILDMONS_RATE_E4 = \1
+	REDEF CURRENT_GRASS_WILDMONS_LABEL_E4 EQUS "._def_grass_wildmonse4_\1"
+{CURRENT_GRASS_WILDMONS_LABEL_E4}:
+	db \1
+ENDM
+
+MACRO end_grass_wildmonse4
+	IF CURRENT_GRASS_WILDMONS_RATE_E4 == 0
+		ASSERT 1 == @ - {CURRENT_GRASS_WILDMONS_LABEL_E4}, \
+			"def_grass_wildmonse4 {d:CURRENT_GRASS_WILDMONS_RATE_E4}: expected 1 byte"
+	ELSE
+		ASSERT WILDDATA_LENGTH_E4 == @ - {CURRENT_GRASS_WILDMONS_LABEL_E4}, \
+			"def_grass_wildmonse4 {d:CURRENT_GRASS_WILDMONS_RATE_E4}: expected {d:WILDDATA_LENGTH_E4} bytes"
+	ENDC
+ENDM
+
+MACRO def_water_wildmonse4
+;\1: encounter rate
+	DEF CURRENT_WATER_WILDMONS_RATE_E4 = \1
+	REDEF CURRENT_WATER_WILDMONS_LABEL_E4 EQUS "._def_water_wildmonse4_\1"
+{CURRENT_WATER_WILDMONS_LABEL_E4}:
+	db \1
+ENDM
+
+MACRO end_water_wildmonse4
+	IF CURRENT_WATER_WILDMONS_RATE_E4 == 0
+		ASSERT 1 == @ - {CURRENT_WATER_WILDMONS_LABEL_E4}, \
+			"def_water_wildmonse4 {d:CURRENT_WATER_WILDMONS_RATE_E4}: expected 1 byte"
+	ELSE
+		ASSERT WILDDATA_LENGTH_E4 == @ - {CURRENT_WATER_WILDMONS_LABEL_E4}, \
+			"def_water_wildmonse4 {d:CURRENT_WATER_WILDMONS_RATE_E4}: expected {d:WILDDATA_LENGTH_E4} bytes"
 	ENDC
 ENDM

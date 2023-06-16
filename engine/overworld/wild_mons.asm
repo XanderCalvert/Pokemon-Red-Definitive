@@ -2,6 +2,9 @@ LoadWildData::
     ; Check if the player has obtained the diploma
     ; CheckEvent EVENT_DIPLOMA_OBTAINED
     ; jr nz, .DiplomaObtained
+    ; Check if the player has beaten the Elite 4
+    CheckEvent HS_CERULEAN_CAVE_GUY
+    jr nz, .E4Beaten
     ; Check if the player has obtained the Pokedex
     CheckEvent EVENT_GOT_POKEDEX
     jr nz, .PokedexObtained
@@ -14,7 +17,12 @@ LoadWildData::
 ;     ld hl, DiplomaWildDataPointers
 ;     jr .LoadWildData
 
-.PokedexObtained:
+.E4Beaten:
+    ; If the Elite 4 have been beaten, load from the special pointer list
+    ld hl, E4BeatenWildDataPointers
+    jr .LoadWildData
+
+.PokedexObtained: ; mainly used for Debugging
     ; If the Pokedex has been obtained, load from the special Pokedex pointer list
     ld hl, PokedexWildDataPointers
     ; No need for a jr instruction here since the next label will be .LoadWildData
@@ -52,6 +60,7 @@ LoadWildData::
 
 INCLUDE "data/wild/grass_water.asm"
 INCLUDE "data/wild/pokedex_grass_water.asm"
+INCLUDE "data/wild/e4_grass_water.asm"
 ; INCLUDE "data/wild/diploma_grass_water.asm"
 
 
