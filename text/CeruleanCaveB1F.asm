@@ -1,6 +1,15 @@
 _MewtwoBattleText::
-	text "Mew!@"
+	para "I wasn't born a"
+	line "#MON, I was"
+	cont "created. and"
+	cont "my creators"
+	cont "have used and"
+	cont "betrayed me!"
+
+	para "So I stand"
+	line "alone!"
 	text_end
+
 
 ; Mewtwo: I wasn't born a Pokémon, I was created; and my creators have used and betrayed me! So, I stand alone!
 
@@ -35,8 +44,18 @@ _MewtwoBattleText::
 ; 	cont "challenge!"
 ; 	done
 
-; _MewtwoBattleText::
+; _MewtwoBattleText1::
 ; 	para "I wasn't born a"
 ; 	line "#MON, I was"
-; 	cont "created  can"
-; 	cont "become stronger!"
+; 	cont "created. and"
+; 	cont "my creators"
+; 	cont "have used and"
+; 	cont "betrayed me!"
+
+; 	para "So I stand"
+; 	line "alone!"
+; 	text_end
+
+; _MewtwoBattleText2::
+; 	text "Mew!@"
+; 	text_end
