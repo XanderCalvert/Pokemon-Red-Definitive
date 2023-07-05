@@ -27,23 +27,6 @@ _MewtwoBattleText::
 ; The world will heed my warning.
 ; The reign of Mewtwo will soon begin.
 
-; BrunosRoomTrainerHeader0:
-; 	trainer EVENT_BEAT_BRUNOS_ROOM_TRAINER_0, 0, BrunoBeforeBattleText, BrunoEndBattleText, BrunoAfterBattleText
-; 	db -1 ; end
-
-; BrunoEndBattleText
-
-; _BrunoEndBattleText::
-; 	text "Why?"
-; 	line "How could I lose?"
-; 	prompt
-
-; _BrunoAfterBattleText::
-; 	text "My job is done!"
-; 	line "Go face your next"
-; 	cont "challenge!"
-; 	done
-
 ; _MewtwoBattleText1::
 ; 	para "I wasn't born a"
 ; 	line "#MON, I was"
