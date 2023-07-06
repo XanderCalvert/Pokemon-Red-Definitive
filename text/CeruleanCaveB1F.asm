@@ -5,40 +5,11 @@ _MewtwoBattleText::
 	cont "my creators"
 	cont "have used and"
 	cont "betrayed me!"
-
-	para "So I stand"
-	line "alone!"
+	cont "So I stand"
+	cont "alone!"
 	text_end
 
+_MewtwoBattleText2::
+	text "Mewtwo!@"
+	text_end
 
-; Mewtwo: I wasn't born a Pokémon, I was created; and my creators have used and betrayed me! So, I stand alone!
-
-; I see now that the circumstances of one's birth are irrelevant; it is what you do with the gift of life that determines who you are.
-
-; Humans may have created me... ...but they will never enslave me. This cannot be my destiny!
-; l was not born a Pokémon! l was created. 
-; My creators have used and betrayed me.
-; So l stand alone.
-; Who am l?
-; What is my true reason for being?
-; l will find my own purpose.
-; And purge this planet of all who oppose me.
-; Human and Pokémon alike.
-; The world will heed my warning.
-; The reign of Mewtwo will soon begin.
-
-; _MewtwoBattleText1::
-; 	para "I wasn't born a"
-; 	line "#MON, I was"
-; 	cont "created. and"
-; 	cont "my creators"
-; 	cont "have used and"
-; 	cont "betrayed me!"
-
-; 	para "So I stand"
-; 	line "alone!"
-; 	text_end
-
-; _MewtwoBattleText2::
-; 	text "Mew!@"
-; 	text_end

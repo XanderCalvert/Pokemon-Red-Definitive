@@ -31,7 +31,7 @@ MewtwoText:
     jp TextScriptEnd    ; Jump to the TextScriptEnd label, ending the script.
 
 MewtwoBattleText:
-    text_far _MewtwoBattleText      ; This indicates that the text for the Mewtwo battle is located elsewhere in memory and should be loaded from there.
+    text_far _MewtwoBattleText2      ; This indicates that the text for the Mewtwo battle is located elsewhere in memory and should be loaded from there.
     text_asm    ; This keyword indicates that following code will be assembly.
     ld a, MEWTWO    ; Load the identifier for Mewtwo's cry into the a register.
     call PlayCry    ; Play Mewtwo's cry.
