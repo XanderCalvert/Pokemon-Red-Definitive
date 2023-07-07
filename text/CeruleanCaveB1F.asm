@@ -9,6 +9,7 @@ _MewtwoBattleText::
 	cont "alone!"
 	text_end
 
+; Want to figure out how we can do multiple lines of text in a text box before a battle
 _MewtwoBattleText2::
 	text "Mewtwo!@"
 	text_end
