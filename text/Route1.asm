@@ -10,6 +10,9 @@ _Route1ViridianMartSampleText::
 	para "I know, I'll give"
 	line "you a sample!"
 	cont "Here you go!"
+	cont "However we don't"
+	cont "sell potions"
+	cont "there."
 	prompt
 
 _Route1Text_1cae8::
